@@ -1,0 +1,17 @@
+name: PhantomWindow
+version: ${project.version}
+main: dev.phantomwindow.PhantomWindow
+api-version: '1.21'
+description: Per-player world distortion hallucinations
+commands:
+  distortion:
+    description: Manage the distortion gauge
+    usage: /distortion <get|set|add|trigger|reload> [player] [value]
+    aliases: [phantom]
+    permission: phantomwindow.admin
+permissions:
+  phantomwindow.admin:
+    default: op
+  phantomwindow.immune:
+    description: Player never gets distortions
+    default: false

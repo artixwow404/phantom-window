@@ -1,0 +1,40 @@
+# Worlds where the effect works. Empty list = all NORMAL (overworld-type) worlds.
+enabled-worlds: []
+
+# How often the gauge is updated (seconds)
+tick-seconds: 1
+
+gauge:
+  underground-y: 40        # below this Y the player is "deep"
+  dark-light-level: 4      # light level below this counts as "dark"
+  gain-underground: 2.0    # per tick-interval
+  gain-dark: 3.0
+  decay: 4.0               # per tick-interval when on light and not deep
+  trigger-threshold: 60    # events can start above this value
+  max-chance: 0.5          # chance per tick-interval at gauge 100
+  discharge: 40            # subtracted from gauge after an event
+  cooldown-seconds: 30     # minimum time between events for one player
+
+event:
+  radius: 10               # radius of the replaced area (cube)
+  duration-ticks: 50       # 50 = 2.5 seconds
+  fake-time: 13000         # player-only time of day (dusk = reddish sky)
+  red-vignette: true       # fake world border makes screen edges red
+  rain-sky: true           # player-only rain darkens the sky
+  darkness-effect: true    # short Darkness potion effect
+  sounds: true
+  particles: true
+  block-interaction: true  # cancel break/place/interact while the event is active
+
+# Chance weights for stone-like blocks during the event (any positive numbers)
+stone-weights:
+  blackstone: 60
+  magma: 14
+  sculk: 12
+  crying-obsidian: 8
+  reinforced-deepslate: 4
+  end-portal-frame: 2      # the "what is that" block
+
+messages:
+  no-permission: "§cNo permission."
+  usage: "§eUsage: /distortion <get|set|add|trigger|reload> [player] [value]"
